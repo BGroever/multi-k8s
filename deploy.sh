@@ -10,9 +10,9 @@ docker push bengroever/multi-client:$SHA
 docker push bengroever/multi-server:$SHA
 docker push bengroever/multi-worker:$SHA
 
+echo "******************************************************************************"
+echo " HERE "
+echo "******************************************************************************"
 kubectl apply -f k8s
-kubectl set image deployments/client-deployment client=bengroever/multi-client:$SHA
-kubectl set image deployments/server-deployment server=bengroever/multi-server:$SHA
-kubectl set image deployments/worker-deployment worker=bengroever/multi-worker:$SHA
 
 
